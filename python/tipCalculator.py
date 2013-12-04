@@ -12,7 +12,7 @@ total = raw_input("What is the total cost of your meal? >")
 # add if statement commenting on cost
 percent = raw_input("What percent would you like to tip? >")
 #add comment about percent
-tip = float(percent) / 100
+tip = float(
 #print "So, $" +total + " plus a tip of $" + tip + "divided by " + people + "people."
 subtotal = float(tip) = float(total)
 print "Subtotal =" + subtotal
