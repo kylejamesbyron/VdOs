@@ -1,5 +1,5 @@
 #!/bin/bash
-# This is a script to make scenes.
+# This is a script test.
 
 echo "Test test test"
 MyVar="Mark Isom"
