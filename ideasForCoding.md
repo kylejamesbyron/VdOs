@@ -23,3 +23,7 @@
 
 ## Video Encode
 - [ ] deliver to SD card
+
+Podcast downloader
+make internet history intobook
+linux reality
