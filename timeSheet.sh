@@ -1,4 +1,4 @@
-#!/bin.bash
+#!/bin/bash
 # A script to generate a simple timesheet.
 
 # Login
