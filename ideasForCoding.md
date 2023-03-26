@@ -1,11 +1,22 @@
 # Ideas for Coding
 
-## The Writer List
-- Test
+### The Writer List
+- [ ] link to PDFs
+- [ ] generate lists
+- [ ] Genres
+- [ ] reports
 
-## Meta Data Log
+### Media Manager
+- [ ] Edit logs
+- [ ] Written in Python and HTML
 
-## Recipe to Grocery List
+### Recipe to Grocery List
+- [ ] Generate Grocery list
 
-## Video Encoder
+### Video Encoder
 
+
+### Timesheet
+- [ ] 
+- [ ] 
+- [ ] 
