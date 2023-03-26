@@ -31,6 +31,6 @@ function db_remove() {
 
 # TESTING
 
-db_set name mark isom
+db_set name mark
 
 echo $(db_get name)
