@@ -5,13 +5,13 @@
 
 echo "Please enter the last four of your social security:"
 read lastFour
-touch $lastFour.db
+touch $lastFour.csv
 
 # Functions:
 
 # Database setup:
 
-DATABASE_FILE=$lastFour.db
+DATABASE_FILE=$lastFour.csv
  
 function db_clear() {
   rm -f "$DATABASE_FILE"
@@ -29,4 +29,8 @@ function db_remove() {
   db_set $1 ""
 }
 
-# 
+# TESTING
+
+db_set name mark isom
+
+echo $(db_get name)
