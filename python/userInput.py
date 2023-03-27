@@ -1,3 +1,5 @@
+#! /usr/bin/python3
+
 # A Test Python program.
 
 print("Test")
