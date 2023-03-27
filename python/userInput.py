@@ -1,4 +1,4 @@
 # A Test Python program.
 
-Print "Test"
+print "Test"
 
