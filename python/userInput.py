@@ -7,8 +7,9 @@ print("Test")
 # Python program showing
 # a use of input()
 
-val = "input("Enter string")"
+val = input("Enter string")
 print(val)
 
 
-# End Program
+end
+
