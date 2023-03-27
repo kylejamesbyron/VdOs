@@ -1,4 +1,4 @@
-#!/usr/bin/python
+pyth#!/usr/bin/python
 
 import sqlite3
 

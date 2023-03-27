@@ -1,5 +1,6 @@
 #!/bin/bash
-# By Linc 10/1/2004
+# By kjb
+#This script is heavily based on bashpodder.shell by Linc:
 # Find the latest script at http://lincgeek.org/bashpodder
 # Revision 1.21 12/04/2008 - Many Contributers!
 # If you use this and have made improvements or have comments
