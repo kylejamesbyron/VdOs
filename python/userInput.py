@@ -7,7 +7,7 @@ print("Test")
 # Python program showing
 # a use of input()
 
-val = input()
+val = "input("Enter string")"
 print(val)
 
 
