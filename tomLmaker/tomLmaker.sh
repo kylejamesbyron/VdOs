@@ -18,7 +18,7 @@ C="\"$Calternate"\"
 D="\"$Dalternate"\"
 
 
-echo " "
+echo "" >> test.toml
 echo "[[questions]]" >> test.toml
 echo question = $Q >> test.toml
 echo "answer = $A" >> test.toml
