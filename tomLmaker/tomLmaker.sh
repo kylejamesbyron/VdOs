@@ -3,17 +3,22 @@
 echo "Question:"
 read Question
 echo "Answer:"
-read A
+read Answer
 echo "Alternate 1:"
-read B
+read Balternate
 echo "Alternate 2:"
-read C
+read Calternate
 echo "Alternate 3:"
-read D
+read Dalternate
 
 Q="\"$Question"\"
+A="\"$Answer"\"
+B="\"$Balternate"\"
+C="\"$Calternate"\"
+D="\"$Dalternate"\"
 
 
+echo ""
 echo "[[questions]]" >> test.toml
 echo question = $Q >> test.toml
 echo "answer = $A" >> test.toml
