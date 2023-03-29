@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Question:"
-read Q
+read "Q"
 echo "Answer:"
 read A
 echo "Alternate 1:"
