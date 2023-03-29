@@ -11,7 +11,7 @@ read C
 echo "Alternate 3:"
 read D
 
-Q="$Question"
+Q='"$Question"'
 
 
 echo "[[questions]]" >> test.toml
