@@ -13,9 +13,9 @@ read D
 
 
 echo "[[questions]]" >> test.toml
-echo "question = $Q" >> test.toml
-echo "answer = $A" >> test.toml
-echo "alternatives = [ "$B", "$C", "$D",]" >> test.toml
+echo "question = "$Q"" >> test.toml
+echo "answer = "$A"" >> test.toml
+echo "alternatives = [ ""$B"", ""$C"", ""$D"",]" >> test.toml
 
 # Example
 # [[questions]]
