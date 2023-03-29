@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Question:"
-read Q
+read Question
 echo "Answer:"
 read A
 echo "Alternate 1:"
@@ -10,6 +10,8 @@ echo "Alternate 2:"
 read C
 echo "Alternate 3:"
 read D
+
+Q="$Question"
 
 
 echo "[[questions]]" >> test.toml
