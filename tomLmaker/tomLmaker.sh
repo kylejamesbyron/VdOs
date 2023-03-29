@@ -11,11 +11,11 @@ read C
 echo "Alternate 3:"
 read D
 
-Q="$Question"
+Q="\"$Question"\"
 
 
 echo "[[questions]]" >> test.toml
-echo question = "$Q" >> test.toml
+echo question = $Q >> test.toml
 echo "answer = $A" >> test.toml
 echo "alternatives = [ "$B", "$C", "$D",]" >> test.toml
 
