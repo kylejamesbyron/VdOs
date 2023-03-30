@@ -1,32 +1,38 @@
 #!/bin/bash
 # TOML Question Formatter
 
+echo "Question Number? "
+read questionNumber
+
+qdir=CTIAquestions/$questionNumber
+
 echo "Question:"
-read Question
+read question
 echo "Answer:"
-read Answer
-echo "Alternate 1:"
-read Balternate
-echo "Alternate 2:"
-read Calternate
-echo "Alternate 3:"
-read Dalternate
+read correct
+echo "A:"
+read Aanswer
+echo "B:"
+read Banswer
+echo "C:"
+read Canswer
+echo "D:"
+read Danswer
 
-Q="\"$Question"\"
-A="\"$Answer"\"
-B="\"$Balternate"\"
-C="\"$Calternate"\"
-D="\"$Dalternate"\"
+echo "" >> $qdir
+echo "question=$question" >> $qdir
+echo "correct=$correct" >> $qdir
+echo "Aanswer=$Aanswer" >> $qdir
+echo "Banswer=$Banswer" >> $qdir
+echo "Canswer=$Canswer" >> $qdir
+echo "Danswer=$Danswer" >> $qdir
 
 
-echo "" >> test.toml
-echo "[[questions]]" >> test.toml
-echo question = $Q >> test.toml
-echo "answer = $A" >> test.toml
-echo "alternatives = [ "$B", "$C", "$D",]" >> test.toml
 
 # Example
-# [[questions]]
-# question = "A technician needs to run a diagnostic DVD on a laptop running Windows 8.1. After setting the boot order in the UEFI BIOS to the internal DVD-RW drive, the laptop still boots into Windows. Which of the following settings needs to be adjusted in order for the laptop to boot from the DVD RW drive?" 
-# answer = "Secure boot"
-# alternatives = ["TPM", "Virtualization", "UEFI BIOS password",]
+#question="A technician needs to run a diagnostic DVD on a laptop running Windows 8.1. After setting the boot order in the UEFI BIOS to the internal DVD-RW drive, the laptop still boots into Windows. Which of the following settings needs to be adjusted in order for the laptop to boot from the DVD RW drive?" 
+#correct="Secure boot"
+#Aanswer="Secure boot"
+#Banswer="TPM"
+#Canswer="Virtualization"
+#Danswer="UEFI BIOS password"
