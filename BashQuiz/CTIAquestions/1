@@ -1,7 +1,5 @@
 question="A technician needs to run a diagnostic DVD on a laptop running Windows 8.1. After setting the boot order in the UEFI BIOS to the internal DVD-RW drive, the laptop still boots into Windows. Which of the following settings needs to be adjusted in order for the laptop to boot from the DVD RW drive?" 
-
 correct="Secure boot"
-
 Aanswer="Secure boot"
 Banswer="TPM"
 Canswer="Virtualization"

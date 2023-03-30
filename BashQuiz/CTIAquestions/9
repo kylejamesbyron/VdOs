@@ -1,0 +1,7 @@
+
+question="A customer wants a computer for performing a single-threaded task as quickly as possible. Which of the following CPU characteristics is the MOST important?"
+correct="Clock speed"
+Aanswer="Clock speed"
+Banswer="Hyperthreading"
+Canswer="Fan speed"
+Danswer="Number of cores"
