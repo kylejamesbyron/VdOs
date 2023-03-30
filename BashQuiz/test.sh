@@ -16,7 +16,7 @@ echo "Question $questionNumber"
 #sourcing file.
 source CTIAquestions/$questionNumber
 
-echo $question
+echo "\"$question"\"
 
 echo "-$Aanswer"
 echo "-$Banswer"

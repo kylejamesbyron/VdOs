@@ -1,0 +1,7 @@
+
+question="A technician connects a second monitor to a desktop. It is physically located to the right of the existing monitor, but the mouse pointer can only get to the second monitor by moving to the left edge of the screen of the first monitor. Which of following display settings needs to be adjusted to get the pointer to move with the physical placement of the monitor?"
+correct=Position
+Aanswer=Scaling
+Banswer=Rotation
+Canswer=Position
+Danswer=Resolution

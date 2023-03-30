@@ -24,7 +24,7 @@ read Danswer
 
 #write to file
 echo "" >> $qdir
-echo "question=$question" >> $qdir
+echo "question="\"$question"\" >> $qdir
 echo "correct=$correct" >> $qdir
 echo "Aanswer=$Aanswer" >> $qdir
 echo "Banswer=$Banswer" >> $qdir
