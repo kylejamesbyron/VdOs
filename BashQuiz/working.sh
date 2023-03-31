@@ -2,36 +2,42 @@
 
 # A program for administering the CompTIA A+ quiz
 
-#starting
-## I would like to add a function for making random here.
+#function for the quiz
 
-#deciding what number ro stsrt with.
-echo "What question would you like to start with?"
-read questionNumber
+quiz() {
+	#starting
+	# Randomly pick question.
 
-clear
+	questionNumber=$(shuf -i1-10 -n1)
 
-echo "Question $questionNumber"
+	clear
 
-#sourcing file.
-source CTIAquestions/$questionNumber
+	echo "Question $questionNumber"
 
-echo "\"$question"\"
+	#sourcing file.
+	source CTIAquestions/$questionNumber
 
-echo "-$Aanswer"
-echo "-$Banswer"
-echo "-$Canswer"
-echo "-$Danswer"
+	echo "\"$question"\"
 
-echo "ANSWER: "
-read answer
+	echo "-$Aanswer"
+	echo "-$Banswer"
+	echo "-$Canswer"
+	echo "-$Danswer"
 
-if [ "$answer" = "$correct" ];
-then
-	echo "Correct!";
-else
-	echo "Incorrect!"
+	echo "ANSWER: "
+	read answer
 
-fi
+	if [ "$answer" = "$correct" ];
+	then
+		echo "Correct!";
+	else
+		echo "Incorrect!"
 
+	fi
+	#Call quiz back.
+	quiz
 
+}
+
+#First calling of quiz
+quiz
