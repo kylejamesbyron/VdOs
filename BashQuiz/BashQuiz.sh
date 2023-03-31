@@ -22,6 +22,7 @@ function db_remove() {
   db_set $1 ""
 }
 
+
 #function for the quiz
 
 quiz() {
@@ -31,8 +32,9 @@ quiz() {
 	questionNumber=$(shuf -i1-10 -n1)
 
 	clear
-
-	echo "Question $questionNumber"
+	echo "Correct:  $points"
+	echo "Out of:  $total"
+	echo "QUESTION $questionNumber"
 
 	#sourcing file.
 	source CTIAquestions/$questionNumber
@@ -50,14 +52,22 @@ quiz() {
 	if [ "$answer" = "$correct" ];
 	then
 		echo "Correct!";
+# Iterate Points
+		points=$((points+1))
+		total=$((total+1))
 	else
 		echo "Incorrect!"
-
+		total=$((total+1))
 	fi
+	
 	#Call quiz back.
 	quiz
 
 }
+
+#setup points and totals
+point=0
+total=0
 
 #First calling of quiz
 quiz
