@@ -4,14 +4,14 @@
 
 # Functions for the database
 
-DATABASE_FILE=$lastName.$firstName.csv
+DATABASE_FILE=studyRecords.csv
  
 function db_clear() {
   rm -f "$DATABASE_FILE"
 }
  
 function db_set() {
-  echo "$1,$2" >> "$DATABASE_FILE"
+  echo "$1,$2,$3" >> "$DATABASE_FILE"
 }
  
 function db_get() {
@@ -22,6 +22,8 @@ function db_remove() {
   db_set $1 ""
 }
 
+# Date
+dateFormat=$(date +%F)
 
 #function for the quiz
 
@@ -60,9 +62,16 @@ quiz() {
 		total=$((total+1))
 	fi
 	
+	echo "NEXT for next Question."
+	echo "EXIT to exit"
+	read end
+	if [ "$end" = "NEXT" ];
+	then
 	#Call quiz back.
-	quiz
-
+		quiz
+	elif [[ "$end" = "EXIT" ]]; then
+			db_set $dateFormat $points $total
+	fi
 }
 
 #setup points and totals
