@@ -20,7 +20,7 @@ read response
 
 if [[ $response = Y ]]; then
 	echo "sudo dd if=$image of=$location bs=4M status=progress"
-	sudo dd if=/Downloads/linuxmint-19.2-cinnamon-32bit.iso of=/dev/sdc bs=4M status=progress
+	sudo dd if= ~/Downloads/linuxmint-19.2-cinnamon-32bit.iso of=/dev/sdc bs=4M status=progress
 
 
 
