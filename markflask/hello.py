@@ -7,16 +7,26 @@ import sqlite3
 connection = sqlite3.connect("test.db")
 cursor = connection.cursor()
 
-username = "1"
+selection = cursor.execute("SELECT users, ID from users WHERE ID = 2")
+for row in selection:
+   username = (row[0])
+   ID = (row[1])
 
-cursor.execute("INSERT INTO users (users) values (?)", (username))
+message = ('''
+User: ''' + username + '''
+Test''')
 
-connection.commit()
-
-@app.route('/')
+   
+@app.route('/%s' % username)
 def hello_world():
-    return 'Hello! %s ' % username
-    return 'france'
+   return '''
+   <xmp>
+   User: %s
+   Test: %s
+   Test
+   </xmp>
+   ''' % (username, ID)
+    
 
 
 #closing db connection
