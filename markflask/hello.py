@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import send_file
 app = Flask(__name__)
 
 #importing sqlite3 and connecting to database
@@ -26,8 +27,10 @@ def hello_world():
    Test
    </xmp>
    ''' % (username, ID)
-    
 
+@app.route('/')
+def hello():
+   return "Hello %s" % "mark"
 
 #closing db connection
 connection.close()
