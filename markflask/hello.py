@@ -27,6 +27,7 @@ def hello_world():
    Test
    </xmp>
    ''' % (username, ID)
+word = "Testerson"
 
 @app.route('/')
 def hello():
