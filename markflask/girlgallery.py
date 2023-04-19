@@ -12,7 +12,7 @@ app = Flask(__name__)
 #connection = sqlite3.connect("girls.db")
 #cursor = connection.cursor()
 
-@app.route('/gallery/<username>')
+@app.route('/<username>')
 def gallery(username):
     import sqlite3
     connection = sqlite3.connect("girls.db")
@@ -45,11 +45,29 @@ def data():
          var2 = value
 
 
-@app.route("/")
-def Display_IMG():
-    IMG_LIST = os.listdir('static/users/Gina/')
-    IMG_LIST = ['/users/Gina/' + i for i in IMG_LIST]
+@app.route("/<username>/gallery/")
+def Display_IMG(username):
+    import sqlite3
+    connection = sqlite3.connect("girls.db")
+    cursor = connection.cursor()
+    selection = cursor.execute("SELECT name, link, age, location from girls WHERE name = ? ", [username])
+    for row in selection:
+        name = (row[0])
+        link = (row[1])
+        age = (row[2])
+        location = (row[3])
+    #closing db connection
+    connection.close()
+    IMG_LIST = os.listdir('static/users/' + name + '/')
+    IMG_LIST = ['/users/' + name + '/' + i for i in IMG_LIST]
     return render_template("Full.html", imagelist=IMG_LIST)
+
+
+#@app.route("/")
+#def Display_IMG():
+#    IMG_LIST = os.listdir('static/users/Gina/')
+#    IMG_LIST = ['/users/Gina/' + i for i in IMG_LIST]
+#    return render_template("Full.html", imagelist=IMG_LIST)
 
 
 #closing db connection
