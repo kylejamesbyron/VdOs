@@ -6,10 +6,11 @@
 
   
 </head><body>
-<form action="{{ url_for(" gfg="" )}}="" method="post">
-  <label for="firstname">First Name:</label>
-  <input id="firstname" name="fname" placeholder="firstname" type="text"><label for="lastname">Last Name:</label>
-  <input id="lastname" name="lname" placeholder="lastname" type="text"><button type="submit">Login</button>
+<form action="/data" method = "POST">
+    <p>Name <input type = "text" name = "Name" /></p>
+    <p>City <input type = "text" name = "City" /></p>
+    <p>Country <input type = "text" name = "Country" /></p>
+    <p><input type = "submit" value = "Submit" /></p>
 </form>
 
 </body></html>

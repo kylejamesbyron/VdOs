@@ -10,7 +10,10 @@ Name: </span><span style="font-family: Helvetica,Arial,sans-serif;">{{ name }}
 </span><br style="font-family: Helvetica,Arial,sans-serif; font-weight: bold;">
 <span style="font-family: Helvetica,Arial,sans-serif; font-weight: bold;">Location: </span><span style="font-family: Helvetica,Arial,sans-serif;">{{ location }}</span><span style="font-family: Helvetica,Arial,sans-serif; font-weight: bold;">
 </span><br>
-<img src="%7B%7B%20url_for%28%27static%27,%20filename%20=%20%27profile.jpg%27%29%20%7D%7D" alt="">
+{{ link }}
+
+<img src="{{url_for('static', filename='/users/' + name + '/profile.jpg')}}" align="middle" />
+
 
 <br>
 
