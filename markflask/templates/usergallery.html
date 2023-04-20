@@ -7,7 +7,8 @@
 <body>
 <h1>The Multiple Images</h1>
     {% for i in imagelist %}
-    <img src = "{{ url_for('static', filename=i)}}">
+    <img style="width: 375px" alt="photo" 
+    src = "{{ url_for('static', filename=i)}}">
     {% endfor %}
 </body>
 </html>

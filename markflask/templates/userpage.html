@@ -2,7 +2,7 @@
 <html><head>
 
   
-  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Gallery</title></head><body><span style="font-family: Helvetica,Arial,sans-serif; font-weight: bold;">
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>{{ name }}</title></head><body><span style="font-family: Helvetica,Arial,sans-serif; font-weight: bold;">
 
 Name: </span><span style="font-family: Helvetica,Arial,sans-serif;">{{ name }}
 </span><br style="font-family: Helvetica,Arial,sans-serif; font-weight: bold;">
@@ -10,9 +10,9 @@ Name: </span><span style="font-family: Helvetica,Arial,sans-serif;">{{ name }}
 </span><br style="font-family: Helvetica,Arial,sans-serif; font-weight: bold;">
 <span style="font-family: Helvetica,Arial,sans-serif; font-weight: bold;">Location: </span><span style="font-family: Helvetica,Arial,sans-serif;">{{ location }}</span><span style="font-family: Helvetica,Arial,sans-serif; font-weight: bold;">
 </span><br>
-{{ link }}
-
-<img src="{{url_for('static', filename='/users/' + name + '/profile.jpg')}}" align="middle" />
+<a href="{{'http://127.0.0.1:5000/' + name + '/gallery/'}}">Gallery</a> <br>
+<img style="width: 375px" alt="Profile"
+src="{{url_for('static', filename='/users/' + name + '/profile.jpg')}}" align="middle" />
 
 
 <br>

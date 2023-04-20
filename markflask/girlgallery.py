@@ -6,14 +6,47 @@ import os
 
 app = Flask(__name__)
 
-#importing sqlite3 and connecting to database
+# Testing Folder List
+@app.route('/')
+def userlist():
+    userdir = "static/users/"
+    dirname = os.listdir(userdir)
+    userlist = ['dirname' + i for i in dirname]
+    return render_template("test.html", userlist=userlist, dirname=dirname)
 
-#import sqlite3
-#connection = sqlite3.connect("girls.db")
-#cursor = connection.cursor()
+#Test 2
+@app.route('/test')
+def test():
+    path = "static/users/"
+    userlist = os.listdir(path)
+    userlist = [i for i in userlist]
+    print(userlist)  
 
-@app.route('/<username>')
-def gallery(username):
+
+
+    #with open("list.txt") as file:
+    #    for item in file:
+    #        print(item)
+    #        dirname = item
+            #userlist = item
+
+    #f = open("list.txt", "r")
+    
+    #for line in lines:
+    #    dirname = (line[0])
+
+    #userlist = [i for i in dirname]
+    
+    #dirname = "Testing"
+    return render_template("test.html", userlist=userlist)
+       
+    #closing db connection
+    connection.close()
+    f.close()
+
+# Create userpage
+@app.route('/<username>/')
+def userpage(username):
     import sqlite3
     connection = sqlite3.connect("girls.db")
     cursor = connection.cursor()
@@ -25,7 +58,25 @@ def gallery(username):
         location = (row[3])
     #closing db connection
     connection.close()
-    return render_template('Gallery.html', name=name, link=link, age=age, location=location)
+    return render_template('userpage.html', name=name, link=link, age=age, location=location)
+
+# Create usergallery
+@app.route("/<username>/gallery/")
+def usergallery(username):
+    import sqlite3
+    connection = sqlite3.connect("girls.db")
+    cursor = connection.cursor()
+    selection = cursor.execute("SELECT name, link, age, location from girls WHERE name = ? ", [username])
+    for row in selection:
+        name = (row[0])
+        link = (row[1])
+        age = (row[2])
+        location = (row[3])
+    #closing db connection
+    connection.close()
+    IMG_LIST = os.listdir('static/users/' + name + '/')
+    IMG_LIST = ['/users/' + name + '/' + i for i in IMG_LIST]
+    return render_template("usergallery.html", imagelist=IMG_LIST, name=name)
 
 
 
@@ -45,22 +96,7 @@ def data():
          var2 = value
 
 
-@app.route("/<username>/gallery/")
-def Display_IMG(username):
-    import sqlite3
-    connection = sqlite3.connect("girls.db")
-    cursor = connection.cursor()
-    selection = cursor.execute("SELECT name, link, age, location from girls WHERE name = ? ", [username])
-    for row in selection:
-        name = (row[0])
-        link = (row[1])
-        age = (row[2])
-        location = (row[3])
-    #closing db connection
-    connection.close()
-    IMG_LIST = os.listdir('static/users/' + name + '/')
-    IMG_LIST = ['/users/' + name + '/' + i for i in IMG_LIST]
-    return render_template("Full.html", imagelist=IMG_LIST)
+
 
 
 #@app.route("/")
