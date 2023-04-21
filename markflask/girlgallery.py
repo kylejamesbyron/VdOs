@@ -8,11 +8,18 @@ app = Flask(__name__)
 
 # Main
 @app.route('/')
-def test():
+def gg():
+    return render_template('gg.html')
+
+
+
+# users
+@app.route('/users')
+def users():
     path = "static/users/"
     userlist = os.listdir(path)
     userlist = [i for i in userlist]
-    return render_template("main.html", userlist=userlist)
+    return render_template("users.html", userlist=userlist)
 
 
 # Create userpage
