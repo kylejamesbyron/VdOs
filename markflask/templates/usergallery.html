@@ -2,10 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello Worl!</title>
+    <title>{{name}}</title>
 </head>
 <body>
-<h1>The Multiple Images</h1>
+<a href="http://127.0.0.1:5000/"><span
+style="font-weight: bold; text-decoration: underline;">HOME</span></a><span
+style="text-decoration: underline;"> <a href="http://127.0.0.1:5000/"><span
+style="font-weight: bold;">USERS</span></a></span><br>
+<hr style="width: 100%; height: 2px;"><br>
+&nbsp;<br><br>
+<h1>{{name}}</h1>
     {% for i in imagelist %}
     <img style="width: 375px" alt="photo" 
     src = "{{ url_for('static', filename=i)}}">

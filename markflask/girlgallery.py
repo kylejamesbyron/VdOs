@@ -6,43 +6,14 @@ import os
 
 app = Flask(__name__)
 
-# Testing Folder List
+# Main
 @app.route('/')
-def userlist():
-    userdir = "static/users/"
-    dirname = os.listdir(userdir)
-    userlist = ['dirname' + i for i in dirname]
-    return render_template("test.html", userlist=userlist, dirname=dirname)
-
-#Test 2
-@app.route('/test')
 def test():
     path = "static/users/"
     userlist = os.listdir(path)
     userlist = [i for i in userlist]
-    print(userlist)  
+    return render_template("main.html", userlist=userlist)
 
-
-
-    #with open("list.txt") as file:
-    #    for item in file:
-    #        print(item)
-    #        dirname = item
-            #userlist = item
-
-    #f = open("list.txt", "r")
-    
-    #for line in lines:
-    #    dirname = (line[0])
-
-    #userlist = [i for i in dirname]
-    
-    #dirname = "Testing"
-    return render_template("test.html", userlist=userlist)
-       
-    #closing db connection
-    connection.close()
-    f.close()
 
 # Create userpage
 @app.route('/<username>/')
@@ -58,7 +29,7 @@ def userpage(username):
         location = (row[3])
     #closing db connection
     connection.close()
-    return render_template('userpage.html', name=name, link=link, age=age, location=location)
+ #   return render_template('userpage.html', name=name, link=link, age=age, location=location)
 
 # Create usergallery
 @app.route("/<username>/gallery/")
@@ -95,7 +66,18 @@ def data():
          var1 = key
          var2 = value
 
+@app.route('/tester')
+def tester():
+    return render_template('tester.html')
+    firstName = request.form['first_name']
+    print(firstName)
 
+@app.route('/hello', methods=['POST'])
+def hello():
+    first_name = request.form['first_name']
+    last_name = request.form['last_name']
+    return 'Hello %s %s have fun learning python <br/> <a href="/">Back Home</a>' % (first_name, last_name)
+    print('first_name')
 
 
 
