@@ -9,7 +9,7 @@
     
     {% for i in userlist %}
     <a style="font-weight: bold;"
-    <a href="http://127.0.0.1:5000/{{i}}/gallery/">{{i}}</a><br>
+    <a href="http://127.0.0.1:5000/{{i}}/gallery/">{{i}}</a>
     <img style="width: 375px" alt="Profile"
     src="{{url_for('static', filename='/users/' + i + '/profile.jpg')}}" align="middle" /><br>
 
