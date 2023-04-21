@@ -29,7 +29,7 @@ def userpage(username):
         location = (row[3])
     #closing db connection
     connection.close()
- #   return render_template('userpage.html', name=name, link=link, age=age, location=location)
+    return render_template('userpage.html', name=name, link=link, age=age, location=location)
 
 # Create usergallery
 @app.route("/<username>/gallery/")
@@ -69,16 +69,49 @@ def data():
 @app.route('/tester')
 def tester():
     return render_template('tester.html')
-    firstName = request.form['first_name']
-    print(firstName)
-
+    
 @app.route('/hello', methods=['POST'])
 def hello():
     first_name = request.form['first_name']
     last_name = request.form['last_name']
     return 'Hello %s %s have fun learning python <br/> <a href="/">Back Home</a>' % (first_name, last_name)
-    print('first_name')
 
+@app.route('/a')
+def question():
+    return render_template('a.html')
+
+@app.route('/b', methods=['POST'])
+def answer():
+    first_name = request.form['first_name']
+    last_name = request.form['last_name']
+    fileName = "answer.txt"
+    f = open(fileName, 'a')
+    f.write(first_name)
+    f.close()
+    return "Success"
+
+#-----Add user to database and make folder-----
+@app.route('/adduser')
+def adduserCollect():
+    return render_template('addusercollect.html')
+
+@app.route('/addusersuccess', methods=['POST'])
+def adduser():
+    ID = request.form['ID']
+    name = request.form['name']
+    link = request.form['link']
+    age = request.form['age']
+    location = request.form['location']
+    import sqlite3
+    connection = sqlite3.connect("girls.db")
+    cursor = connection.cursor()
+# To Insert Values
+    cursor.execute("INSERT INTO girls (ID, name, link, age, location) values (?, ?, ?, ?, ?)", 
+        (ID, name, link, age, location))
+    #commit connection:
+    connection.commit()
+    return "Success"
+#------------------------------------------------#
 
 
 #@app.route("/")
