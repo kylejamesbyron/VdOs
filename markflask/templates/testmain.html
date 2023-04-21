@@ -1,29 +1,39 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html><head>
-
-  
-  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>{{ name }}</title></head>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Galleriese</title>
+</head>
+<body>
+<h1>Gallerys</h1>
   <body>
-
+    
+    {% for i in userlist %}
+    
     <span style="font-family: Helvetica,Arial,sans-serif; font-weight: bold;">
-
 Name: </span><span style="font-family: Helvetica,Arial,sans-serif;">{{ name }}
+
 </span><br style="font-family: Helvetica,Arial,sans-serif; font-weight: bold;">
 <span style="font-family: Helvetica,Arial,sans-serif; font-weight: bold;">
-
 Age: </span><span style="font-family: Helvetica,Arial,sans-serif;">{{ age }}
+
 </span><br style="font-family: Helvetica,Arial,sans-serif; font-weight: bold;">
 <span style="font-family: Helvetica,Arial,sans-serif; font-weight: bold;">
-
 Location: </span><span style="font-family: Helvetica,Arial,sans-serif;">{{ location }}</span><span style="font-family: Helvetica,Arial,sans-serif; font-weight: bold;">
+
 </span><br>
 
 <a href="{{'http://127.0.0.1:5000/' + name + '/gallery/'}}">Gallery</a> <br>
 <img style="width: 375px" alt="Profile"
 src="{{url_for('static', filename='/users/' + name + '/profile.jpg')}}" align="middle" />
+    
+    <a style="font-weight: bold;"
+    <a href="http://127.0.0.1:5000/{{i}}/gallery/">{{i}}</a>
+    <img style="width: 375px" alt="Profile"
+    src="{{url_for('static', filename='/users/' + i + '/profile.jpg')}}" align="middle" /><br>
 
+    {% endfor %}
+    
 
-<br>
-
-</body></html>
+</body>
+</html>
