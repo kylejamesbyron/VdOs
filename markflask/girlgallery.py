@@ -47,7 +47,7 @@ def usergallery(username):
     connection.close()
     IMG_LIST = os.listdir('static/users/' + name + '/')
     IMG_LIST = ['/users/' + name + '/' + i for i in IMG_LIST]
-    return render_template("usergallery.html", imagelist=IMG_LIST, name=name)
+    return render_template("usergallery.html", imagelist=IMG_LIST, name=name, age=age, location=location)
 
 
 

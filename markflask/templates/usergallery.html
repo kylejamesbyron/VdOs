@@ -11,7 +11,9 @@ style="text-decoration: underline;"> <a href="http://127.0.0.1:5000/"><span
 style="font-weight: bold;">USERS</span></a></span><br>
 <hr style="width: 100%; height: 2px;"><br>
 &nbsp;<br><br>
-<h1>{{name}}</h1>
+<h1>NAME: {{name}}</h1>
+<h1>AGE: {{age}}</h1>
+<h1>LOCATION: {{location}}</h1>
     {% for i in imagelist %}
     <img style="width: 375px" alt="photo" 
     src = "{{ url_for('static', filename=i)}}">
